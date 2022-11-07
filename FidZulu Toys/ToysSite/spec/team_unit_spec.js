@@ -7,7 +7,7 @@ describe("Unit tests on toys module", () => {
         //positive test to load toys by name
         it("with name Toys Backend Team", () => {
             let results = team.list();
-            expect(results.team).toBe("Toys Backend Team");
+            expect(results.team).toBe("Backend Toys Team");
         });      
     });
 
@@ -15,7 +15,7 @@ describe("Unit tests on toys module", () => {
         //positive test to load toys by name
         it("with 3rd person to be Deborah", () => {
             let results = team.list();
-            expect(results.membersNames[3]).toBe("Deborah Jahaj");
+            expect(results.membersNames[1]).toBe("Mahvish Anwar");
         });      
     });
 

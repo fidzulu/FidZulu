@@ -5,7 +5,7 @@ const base_url = 'http://localhost:3033/';
 describe("First Node Test Server", () => {
     describe("GET /toys/all/location/:location", () => {
         it("returns Smith", function (done) {
-            request.get(base_url + "toys/all/Raleigh", 
+            request.get(base_url + "toys/all/Durham", 
                 (error, response, body) => {
                     expect(body).toBeTruthy();
                     done();
