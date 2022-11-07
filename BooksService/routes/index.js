@@ -9,20 +9,12 @@ router.get('/books/all/:location', function (req, res, next) {
   console.log(param);
   var currBooks = books.list();
   console.log(currBooks);
-  if (param === "US-NC") {
+  if (param === "Raleigh") {
+    currBooks.forEach(book => book.price = (book.price + book.price*0.075).toFixed(2));
+    res.setHeader('content-type', 'application/json');
+    res.end(JSON.stringify(currBooks));
+  } else if (param === "Durham") {
     currBooks.forEach(book => book.price = (book.price + book.price*0.08).toFixed(2));
-    res.setHeader('content-type', 'application/json');
-    res.end(JSON.stringify(currBooks));
-  } else if (param === "IE") {
-    currBooks.forEach(book => book.price = (book.price + book.price*0.23).toFixed(2));
-    res.setHeader('content-type', 'application/json');
-    res.end(JSON.stringify(currBooks));
-  } else if (param === "IN") {
-    currBooks.forEach(book => book.price = (book.price + book.price*0.18).toFixed(2));
-    res.setHeader('content-type', 'application/json');
-    res.end(JSON.stringify(currBooks));
-  } else if (param === "IN") {
-    currBooks.forEach(book => book.price = (book.price + book.price*0.18).toFixed(2));
     res.setHeader('content-type', 'application/json');
     res.end(JSON.stringify(currBooks));
   } else {
