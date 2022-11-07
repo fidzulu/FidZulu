@@ -33,13 +33,12 @@ router.get('/classB/:servicename/all/:location', function(req, res, next) {
     console.log(url);
     axios.get(url)
     .then(response => {
+      console.log(response.data);
       res.setHeader('content-type', 'application/json');
       res.end(JSON.stringify( response.data));
-      console.log(response.data);
     })
     .catch(err => {
-      res.setHeader('content-type', 'application/json');
-      res.end(JSON.stringify( { error: "Backend issue"}));
+      return res.status(err.response.status).send(err.response.data);
     });
   }
 
@@ -65,12 +64,30 @@ router.get('/classB/:servicename/team', function(req, res, next) {
       console.log(response.data);
     })
     .catch(error => {
-      res.setHeader('content-type', 'application/json');
-      res.end(JSON.stringify( { error: "Backend issue"}));
+      return res.status(error.response.status).send(error.response.data);
     });
   }
 });
 
-
+router.post('/classB/:servicename/add', function(req, res, next) {
+  const servicename = req.params.servicename;
+  let host = findHost(servicename);
+  if(host == null){
+    res.status(404).send("Invalid url!");
+  }
+  else{
+    let url = "http://" + host + "/"+servicename+"/add";
+    console.log(url);
+    axios.post(url, req.body)
+    .then(response => {
+      console.log(servicename);
+      res.setHeader('content-type', 'application/json');
+      res.end(JSON.stringify( response.data));
+    })
+    .catch(error => {
+      return res.status(error.response.status).send(error.response.data);
+    });
+  }
+});
 
 module.exports = router;
