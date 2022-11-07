@@ -34,7 +34,7 @@ router.get('/laptops/team', (request, response, next) => {
 })
 
 /* POST laptop */
-router.post('/laptops', function(req, res, next) {
+router.post('/laptops/add', function(req, res, next) {
   laptops.insertLaptop(req.body).then((laptop)=>{
     res.status(200).send(laptop);
   }).catch(error => {
