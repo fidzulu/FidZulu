@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "dvds-api",
   "version": "0.0.0",
   "private": true,
@@ -18,4 +19,23 @@
   "devDependencies": {
     "jasmine-node": "^3.0.0"
   }
+=======
+  "name": "fidzulubackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fidzulu/FidZuluBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fidzulu/FidZuluBackend/issues"
+  },
+  "homepage": "https://github.com/fidzulu/FidZuluBackend#readme"
+>>>>>>> 27e6d40a561d99e2266854da9cfbe37d4e5f85df
 }
