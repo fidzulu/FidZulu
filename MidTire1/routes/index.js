@@ -7,10 +7,10 @@ router.get("/", function(req, res, next) {
     res.render("index", { title: "Express" });
 });
 
-router.route("/testRoute").get(function(req, res) {
+router.route("/food/team").get(function(req, res) {
     request({
             method: "GET",
-            uri: "http://localhost:3032/food/all/Durham",
+            uri: "http://localhost:3032/food/team",
         },
         function(error, response, body) {
             if (!error && response.statusCode == 200) {
@@ -18,6 +18,20 @@ router.route("/testRoute").get(function(req, res) {
             }
         }
     );
+});
+ 
+router.route("/food/all/:location").get(function(req, res) {
+  const location = req.params.location;
+  request({
+          method: "GET",
+          uri: "http://localhost:3032/food/all/" + location,
+      },
+      function(error, response, body) {
+          if (!error && response.statusCode == 200) {
+              res.send(body);
+          }
+      }
+  );
 });
 
 router.route("/bikesTeam").get(function(req, res) {
