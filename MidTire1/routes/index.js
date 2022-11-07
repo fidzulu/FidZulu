@@ -2,11 +2,12 @@ var express = require("express");
 var request = require("request");
 var router = express.Router();
 
-/* GET home page. */
+
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.send("Srevice is working");
 });
 
+// Get for food
 router.route("/food/team").get(function (req, res) {
   request(
     {
@@ -21,7 +22,7 @@ router.route("/food/team").get(function (req, res) {
   );
 });
 
-router.route("/food/all/:location").get(function (req, res) {
+router.route("/food/:location").get(function (req, res) {
   const location = req.params.location;
   request(
     {
@@ -35,6 +36,8 @@ router.route("/food/all/:location").get(function (req, res) {
     }
   );
 });
+
+
 
 router.route("/bikes/team").get(function (req, res) {
   request(
