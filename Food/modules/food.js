@@ -16,16 +16,21 @@ exports.team_list = () => {
     return JSON.parse(read_team_json_file());
 }
 
+exports.add = (food) => {
+    var json = JSON.parse(read_json_file());
+    json.push(food);
+    fs.writeFileSync('./data/Foodjson.json', JSON.stringify(json));
+}
+
 exports.query_by_arg = (arg, value) => {
 
     let json_result= JSON.parse(read_json_file());
     // all addresses are stored in a "result" object
-    let result= json_result.result;
 
     console.log("query by arg: "+ arg+ " "+ value);
     let arr = [];
-    for(let i= 0; i < result.length; i++) {
-        let food = result[i];
+    for(let i= 0; i < json_result.length; i++) {
+        let food = json_result[i];
         if("Raleigh" === value) {
             food['price'] = Number((food['price']* 1.075).toFixed(2));
             arr.push(food);
