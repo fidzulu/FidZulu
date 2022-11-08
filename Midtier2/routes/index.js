@@ -8,8 +8,8 @@ let findHost = (servicename) => {
   if(servicename == 'books'){
     host = "localhost:3034";
   }
-  else if(servicename === 'DVDs'){
-    host = "localhost:3035";
+  else if(servicename === 'dvds'){
+    host = "localhost:3033";
   }
   else if(servicename === 'laptops'){
     host = "localhost:3036";
