@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios');
 const createError= require('http-errors');
+const cors = require('cors');
+
+router.use(cors());
 
 let findHost = (servicename) => {
   let host;

@@ -4,6 +4,10 @@ const createError = require('http-errors');
 const laptops = require('../modules/laptops');
 const url = require('url');
 
+const cors = require('cors');
+
+router.use(cors());
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });

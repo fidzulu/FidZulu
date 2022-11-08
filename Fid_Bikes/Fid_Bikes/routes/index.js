@@ -3,6 +3,10 @@ const router = express.Router();
 const createError = require('http-errors');
 const bikes = require('../modules/bikes');
 const url = require('url');
+const app = express();
+const cors = require('cors');
+const exp = require('constants');
+router.use(cors());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

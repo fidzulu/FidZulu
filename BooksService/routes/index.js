@@ -3,6 +3,11 @@ var router = express.Router();
 
 const books = require('../modules/books');
 
+const cors = require('cors');
+
+router.use(cors());
+
+
 
 router.get('/books/all/:location', function (req, res, next) {
   const param = req.params.location;
