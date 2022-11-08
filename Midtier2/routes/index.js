@@ -9,7 +9,7 @@ let findHost = (servicename) => {
     host = "localhost:3034";
   }
   else if(servicename === 'dvds'){
-    host = "localhost:3033";
+    host = "localhost:3035";
   }
   else if(servicename === 'laptops'){
     host = "localhost:3036";
