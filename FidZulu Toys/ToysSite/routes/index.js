@@ -4,9 +4,6 @@ const createError = require("http-errors");
 const toys = require("../modules/toys");
 const toysTeam = require("../modules/toysTeam");
 const url = require("url");
-const cors = require('cors');
-
-router.use(cors());
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
