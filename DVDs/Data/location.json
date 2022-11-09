@@ -1,0 +1,15 @@
+ [{
+    "location": "US-NC",
+    "conversion_rate": "1",
+    "sales_tax":"1.08"
+},
+{
+    "location": "IE",
+    "conversion_rate": "1.01",
+    "sales_tax":"1.23"
+},
+{
+    "location": "IN",
+    "conversion_rate": "82.48",
+    "sales_tax":"1.18"
+}]
