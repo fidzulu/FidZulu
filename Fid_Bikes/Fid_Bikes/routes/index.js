@@ -26,7 +26,7 @@ router.get('/bikes/all/:location', (request, response, next) => {
 router.get('/bikes/team', (request, response, next) => {
   let teamInfo = {
     team : 'bikes',
-    membersNames : ['Bryan Sullivan', 'Isaac Klein', 'Stephen Lee']
+    membersNames : ['C Anusherishikeshwaran', 'Surya Kumar']
   }
   response.setHeader('content-type', 'application/json');
   response.end(JSON.stringify(teamInfo));

@@ -8,7 +8,7 @@ const url = require('url');
 
 
 /* GET home page. */
-router.get('/dvds', (request, response, next) => {
+router.get('/dvds/all/:location', (request, response, next) => {
   let get_params = url.parse(request.url, true).query;
   console.log('got into dvds');
   if (Object.keys(get_params).length == 0) {
@@ -35,19 +35,19 @@ router.get('/dvds', (request, response, next) => {
 
 
 
-/*router.get('/dvds/:location', (request, response, next) => {
-   const param = request.params.location;
-  console.log('got into dvds/:location ' + param);
-  const result = dvds.query_by_arg( "abbreviation", param);
-  if (result) {
+// router.get('/dvds/:location', (request, response, next) => {
+//    const param = request.params.location;
+//   console.log('got into dvds/:location ' + param);
+//   const result = dvds.query_by_arg( "abbreviation", param);
+//   if (result) {
     
-    response.setHeader('content-type', 'application/json');
-    response.end(JSON.stringify(result));
-  }
-  else {
-    next(createError(404));
-  }
-});*/
+//     response.setHeader('content-type', 'application/json');
+//     response.end(JSON.stringify(result));
+//   }
+//   else {
+//     next(createError(404));
+//   }
+// });
 
 
 

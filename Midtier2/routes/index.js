@@ -8,7 +8,7 @@ router.use(cors());
 
 let findHost = (servicename) => {
   let host;
-  if(servicename == 'books'){
+  if(servicename === 'books'){
     host = "localhost:3034";
   }
   else if(servicename === 'dvds'){
